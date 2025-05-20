@@ -1,6 +1,17 @@
-all:
-	g++ -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference -Wfloat-equal -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wformat=2 -Wcast-align -Wstrict-overflow=5 -Wunsafe-loop-optimizations -Wuseless-cast -Wmissing-include-dirs -Wold-style-cast -Woverloaded-virtual -Wnon-virtual-dtor -Wzero-as-null-pointer-constant -Wmissing-declarations -Weffc++ -Wstack-protector -o run Ej_1/Plane.cpp Ej_1/main1.cpp main.cpp
+CXX       = g++
+CXXFLAGS  = -std=c++17 -Wall
 
-valgrind:
-	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./run
-	rm run
+SRC       = $(shell find Ej_1 Ej_2 -name "*.cpp") main.cpp
+EXEC      = main.exe
+
+.PHONY: all clean
+
+all: clean $(EXEC)
+	@valgrind --leak-check=full --track-origins=yes ./$(EXEC)
+
+$(EXEC):
+	@$(CXX) $(CXXFLAGS) $(SRC) -o $(EXEC)
+
+clean:
+	@rm -f $(EXEC)
+

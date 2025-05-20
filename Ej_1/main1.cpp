@@ -7,9 +7,13 @@ void Ejercicio1(){
     Presion presion(101.3f, 5.8f, 6.1f);
     Posicion posicion(-34.6f, -58.4f, 950.0f, 5.3f);
     SaveFlightData saveFlightData(presion, posicion);
+    cout << "Valores de medicion creados." << endl;
+
+    cout << endl;
     cout << "Imprimiendo datos de vuelo..." << endl;
     saveFlightData.imprimir();
 
+    cout << endl;
     cout << "Serializando..." << endl;
     ofstream out("datos_vuelo.dat", ios::binary);
     if (!out) {
@@ -18,8 +22,11 @@ void Ejercicio1(){
     }
     saveFlightData.serializar(out);
     out.close();
+    cout << "Datos de vuelo serializados." << endl;
+    cout << endl;
 
     cout << "Deserializando..." << endl;
+
     ifstream in("datos_vuelo.dat", ios::binary);
     if(!in) {
         cerr << "Error al abrir el archivo para lectura." << endl;

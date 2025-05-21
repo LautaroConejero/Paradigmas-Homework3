@@ -1,7 +1,7 @@
 CXX       = g++
 CXXFLAGS  = -std=c++17 -Wall
 
-SRC       = $(shell find Ej_1 Ej_2 -name "*.cpp") main.cpp
+SRC       = $(shell find Ej_1 Ej_2 Ej_3 -name "*.cpp") main.cpp
 EXEC      = main.exe
 
 .PHONY: all clean

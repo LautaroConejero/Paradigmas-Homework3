@@ -1,5 +1,6 @@
 #include "Ej_1/main1.hpp"
 #include "Ej_2/main2.hpp"
+#include "Ej_3/main3.hpp"
 
 int main(){
     cout << "Bienvenido al homework 3" << endl;
@@ -24,7 +25,7 @@ int main(){
             prueba_2();
             break;
         case 3:
-            //Ejercicio3();
+            prueba_3();
             break;
         case 4:
             cout << "Saliendo del programa." << endl;

@@ -15,7 +15,7 @@ class ProcesadorFigura{
 template <>
 class ProcesadorFigura<Circulo>{
     public:
-        ProcesadorFigura() {} // Define inline
+        ProcesadorFigura() {}
         double calcularArea(Circulo& figura){
             return PI * figura.getRadio() * figura.getRadio();
         }
@@ -24,7 +24,7 @@ class ProcesadorFigura<Circulo>{
 template <>
 class ProcesadorFigura<Elipse>{
     public:
-        ProcesadorFigura() {} // Define inline
+        ProcesadorFigura() {}
         double calcularArea(Elipse& figura){
             return PI * figura.getSemiEjeMayor() * figura.getSemiEjeMenor();
         }
@@ -33,7 +33,7 @@ class ProcesadorFigura<Elipse>{
 template <>
 class ProcesadorFigura<Rectangulo>{
     public:
-        ProcesadorFigura() {} // Define inline
+        ProcesadorFigura() {}
         double calcularArea(Rectangulo& figura){
             return figura.getAncho() * figura.getAlto();
         }   

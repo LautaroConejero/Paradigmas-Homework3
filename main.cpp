@@ -1,6 +1,6 @@
-#include "Ej_1/main1.hpp"
-#include "Ej_2/main2.hpp"
-#include "Ej_3/main3.hpp"
+#include "Ej_1/examples/main1.hpp"
+#include "Ej_2/examples/main2.hpp"
+#include "Ej_3/examples/main3.hpp"
 
 int main(){
     cout << "Bienvenido al homework 3" << endl;

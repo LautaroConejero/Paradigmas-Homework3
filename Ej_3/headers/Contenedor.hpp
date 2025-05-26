@@ -3,11 +3,27 @@
 #include <vector>
 #include <string>
 #include <type_traits>
+#include <sstream>
 using namespace std;
 
-string vec_double(vector<double> vec);
-string vec_string(vector<string> vec);
-string vec_int(vector<vector<int>> vec);
+template <typename T>
+string vec(vector<T> vec) {
+    ostringstream dato;
+    dato << "[";
+    for (size_t i = 0; i < vec.size(); i++) {
+        dato << vec[i];
+        if (i != vec.size() - 1)
+            dato << ", ";
+    }
+    dato << "]";
+    return dato.str();
+}
+
+template<>
+string vec<string>(vector<string> vec);
+
+template<>
+string vec<vector<int>>(vector<vector<int>> vec);
 
 template <typename T>
 class Contenedor {
@@ -26,11 +42,11 @@ class Contenedor {
 
         string generar(){
             if constexpr (is_floating_point<T>::value)
-                return vec_double(datos);
+                return vec(datos);
             if constexpr (is_same<T, vector<int>>::value)
-                return vec_int(datos);
+                return vec(datos);
             if constexpr (is_same<T, string>::value)
-                return vec_string(datos);
+                return vec(datos);
             else
                 return "Tipo no soportado";
         }

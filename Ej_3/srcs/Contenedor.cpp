@@ -3,31 +3,21 @@
 
 using namespace std;
 
-string vec_double(vector<double> vec){
+template<>
+string vec<string>(vector<string> vec) {
     ostringstream dato;
     dato << "[";
-    for (size_t i = 0; i < vec.size(); i++){
-        dato << to_string(vec[i]);
-        if (i != vec.size()-1)
-            dato << ",";
-    }
-    dato << "]";
-    return dato.str();
-}
-
-string vec_string(vector<string> vec){
-    ostringstream dato;
-    dato << "[";
-    for (size_t i = 0; i < vec.size(); i++){
+    for (size_t i = 0; i < vec.size(); i++) {
         dato << "\"" << vec[i] << "\"";
-        if (i != vec.size()-1)
-            dato << ",";
+        if (i != vec.size() - 1)
+            dato << ", ";
     }
     dato << "]";
     return dato.str();
 }
 
-string vec_int(vector<vector<int>> vec){
+template<>
+string vec<vector<int>>(vector<vector<int>> vec) {
     ostringstream dato;
     dato << "[\n";
     for (size_t i = 0; i < vec.size(); i++){

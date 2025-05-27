@@ -5,6 +5,7 @@
 #include <memory>
 using namespace std;
 
+// la interfaz sin ninguna implementacion
 class IMediciones{
     public:
         virtual ~IMediciones() = default;

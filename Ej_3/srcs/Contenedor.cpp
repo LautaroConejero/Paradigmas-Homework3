@@ -1,7 +1,4 @@
 #include "../headers/Contenedor.hpp"
-#include <sstream>
-
-using namespace std;
 
 template<>
 string vec<string>(vector<string> vec) {

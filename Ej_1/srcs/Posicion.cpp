@@ -9,6 +9,7 @@ Posicion::Posicion(const Posicion& p) :
     PosicionX(p.PosicionX), PosicionY(p.PosicionY), PosicionZ(p.PosicionZ) {}
 Posicion::~Posicion() {}
 
+// serializo y deserializo todo en el mismo orden en que se guardo
 void Posicion::serializar(ofstream& out)  {
     Medicion_Base::serializar(out);
     out.write(reinterpret_cast<const char*>(&PosicionX), sizeof(PosicionX));

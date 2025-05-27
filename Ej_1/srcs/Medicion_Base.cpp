@@ -7,6 +7,7 @@ TiempoMedicion(move(tiempoMedicion)) {}
 float Medicion_Base::getTiempo() const{
     return *TiempoMedicion.get();
 }
+
 void Medicion_Base::serializar(ofstream& out)  {
     out.write(reinterpret_cast<const char*>(TiempoMedicion.get()), sizeof(*TiempoMedicion));
 }  

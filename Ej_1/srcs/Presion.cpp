@@ -11,6 +11,7 @@ Presion::Presion(const Presion& p) :
 
 Presion::~Presion() {}
 
+// serializo y deserializo todo en el mismo orden en que se guardo
 void Presion::serializar(ofstream& out)  {
     Medicion_Base::serializar(out);
     out.write(reinterpret_cast<const char*>(&PresionDinamica), sizeof(PresionDinamica));

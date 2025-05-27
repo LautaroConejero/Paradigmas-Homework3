@@ -12,8 +12,9 @@ int main(){
 
     int option;
     cin >> option;
-    while (cin.fail() || option < 1 || option > 4) {
+    while (!cin.good() || option < 1 || option > 4) {
         cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Opcion invalida. Por favor, elija una opcion entre 1 y 4: ";
         cin >> option;
     }

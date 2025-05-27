@@ -4,6 +4,7 @@ SaveFlightData::SaveFlightData(const Presion& p, const Posicion& pos): presion(p
 }
 SaveFlightData::~SaveFlightData() {}
 
+// serializo y deserializo todo en el mismo orden en que se guardo
 void SaveFlightData::serializar(ofstream& out) {
     presion.serializar(out);
     posicion.serializar(out);
